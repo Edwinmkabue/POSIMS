@@ -1,0 +1,27 @@
+{% extends 'layouts/main.html' %}
+{% block title %}POSIMS{%  endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <h1>POSIMS 🌍</h1>
+        <p class="lead">Are you tired of looking for accounting softwares that meets your demands?
+                        Look no further, POSIMS is a Point of sale and inventory management system
+                        that hopes to help small scale businesses in Kenya and Africa at large. 
+                        It will help you conduct your business transactions with ease and also help 
+                        you keep track of your inventory with it's easy to use and user friendly
+                        interface made just for you.  Additionally, POSIMS will provide you with valuable insights derived from the analysis of your business data, enabling you to make informed decisions and optimize your operations.
+                        </p
+            <h3>
+                <a href="/items"><button class="btn-primary btn-lg">Find an item</button></a>
+                <a href="/items/create"><button class="btn btn-default btn-lg">Create an Item</button></a>
+            </h3>
+            <h3>
+                <a href="/sales"><button class="btn btn-primary btn-lg">Sales</button></a>
+                <a href="/sales/create"><button class="btn btn-default btn-lg">Sell an item</button></a>
+            </h3>
+    </div>
+    <div class="col-sm-6 hidden-sm hidden-xs">
+		<img id="posims" src="{{ url_for('static',filename='img/posims.jpg') }}" alt="Front Photo of a local vendor" />
+	</div>
+</div>
+{% endblock %}

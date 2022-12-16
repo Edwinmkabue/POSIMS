@@ -1,0 +1,19 @@
+{% extends 'layouts/main.html' %}
+{% block title %}POSIMS | Items{% endblock %}
+{% block content %}
+{% for stock in stocks %}
+<h3>{{ stock.id }}, {{ stock.name }}, {{ stock.quantity }}</h3>
+	<ul class="items">
+		{% for item in stock.item %}
+		<li>
+			<a href="/items/{{ item.id }}">
+				<i class="fas fa-music"></i>
+				<div class="item">
+					<h5>{{ item.name }}</h5>
+				</div>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+{% endblock %}

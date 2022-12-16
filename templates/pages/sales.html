@@ -1,0 +1,16 @@
+{% extends 'layouts/main.html' %}
+{% block title %}POSIMS | Sales{% endblock %}
+{% block content %}
+<ul class="items">
+	{% for sale in sales %}
+	<li>
+		<a href="/sales/{{ sale.id }}">
+			<i class="fas fa-users"></i>
+			<div class="item">
+				<h5>{{ sale.name }}</h5>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Edit Item{% endblock %}
+{% block content %}
+  <div class="form-wrapper">
+    <form class="form" method="post" action="/items/{{item.id}}/edit">
+      <h3 class="form-heading">Edit item <em>{{ item.name }}</em> <a href="{{ url_for('index') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{ form.name(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="form-group">
+          <label>name & price</label>
+          <div class="form-inline">
+            <div class="form-group">
+              {{ form.name(class_ = 'form-control', placeholder='name', autofocus = true) }}
+            </div>
+            <div class="form-group">
+              {{ form.price(class_ = 'form-control', placeholder='price', autofocus = true) }}
+            </div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="id">Item ID</label>
+        {{ form.id(class_ = 'form-control', autofocus = true) }}
+      </div>
+      <div class="quantity">
+          <label for="quantity">quantity</label>
+          {{ form.phone(class_ = 'form-control', autofocus = true) }}
+        </div>
+        
+      <input type="submit" value="Edit Item" class="btn btn-primary btn-lg btn-block">
+    </form>
+  </div>
+{% endblock %}
